@@ -1,8 +1,10 @@
-package com.felipe.horafeliz;
+package com.felipe.horafeliz.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.felipe.horafeliz.R;
 
 public class CadastroActivity extends AppCompatActivity {
 
