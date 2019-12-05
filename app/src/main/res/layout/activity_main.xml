@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/ic_main_beer_background_background"
     tools:context=".activities.MainActivity">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="84dp"
         android:fontFamily="casual"
-        android:text="HORA FELIZ ;)"
+        android:text="HORA FELIZ 2;)"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintRight_toRightOf="parent"

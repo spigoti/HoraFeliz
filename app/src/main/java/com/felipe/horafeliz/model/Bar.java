@@ -1,15 +1,18 @@
 package com.felipe.horafeliz.model;
 import java.util.UUID;
 
-public class Bar { //extends RealmObject{
-    //@PrimaryKey
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
+public class Bar extends RealmObject {
+    @PrimaryKey
     private String id;
     private String nome;
     private int desconto;
     private String logo;
     private int horarioFuncionamento;
 
-    public Bar(String id) {
+    public Bar() {
         this.id = UUID.randomUUID().toString();
     }
 

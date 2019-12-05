@@ -3,16 +3,19 @@
     package="com.felipe.horafeliz">
 
     <application
+        android:name=".NossaAplicacao"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CadastroActivity"></activity>
-        <activity android:name=".ListaActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
+        <activity android:name=".activities.CadastroActivity"></activity>
+        <activity android:name=".activities.ListaActivity" />
+        <activity android:name=".activities.MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
