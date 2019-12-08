@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         botao_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListaActivity.class);
+                Intent intent = new Intent(MainActivity.this, CadastroActivity.class);
                 startActivity(intent);
             }
         });

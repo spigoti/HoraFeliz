@@ -6,4 +6,246 @@
     android:layout_height="match_parent"
     tools:context=".activities.CadastroActivity">
 
+    <TextView
+        android:id="@+id/txt_diasDisponiveis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Posto"
+        android:text="Dias disponíveis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPostos" />
+
+    <TextView
+        android:id="@+id/txt_nomeLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Quilometragem Atual"
+        android:text="Nome do estabelecimento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_NomeLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomeLocal" />
+
+    <TextView
+        android:id="@+id/txt_cnpj"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Litros Abastecidos"
+        android:text="CNPJ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_NomeLocal" />
+
+    <EditText
+        android:id="@+id/inputCnpj"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_cnpj" />
+
+    <TextView
+        android:id="@+id/txt_horarioFunci"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:hint="Data do Abastecimento"
+        android:text="Horario de funcionamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
+
+    <TextView
+        android:id="@+id/txt_desconto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Posto"
+        android:text="Porcentagem de desconto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <Spinner
+        android:id="@+id/spinnerPostos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_desconto" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#3B495A"
+        android:onClick="salvar"
+        android:text="Salvar"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxQui" />
+
+    <Button
+        android:id="@+id/btnExcluir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/error_color"
+        android:onClick="excluir"
+        android:text="Excluir"
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSalvar" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTer"
+        android:layout_width="116dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:text="Terça-feira"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSeg" />
+
+    <CheckBox
+        android:id="@+id/checkBoxQuar"
+        android:layout_width="123dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:text="Quarta-feira"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTer" />
+
+    <CheckBox
+        android:id="@+id/checkBoxQui"
+        android:layout_width="123dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:text="Quinta-feira"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxQuar" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSex"
+        android:layout_width="117dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="6dp"
+        android:text="Sexta-feira"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSeg"
+        app:layout_constraintTop_toBottomOf="@+id/txt_diasDisponiveis" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="6dp"
+        android:text="Sábado"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxTer"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSex" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDomingo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="6dp"
+        android:text="Domingo"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxQuar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSab" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSeg"
+        android:layout_width="124dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:text="Segunda-feira"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_diasDisponiveis" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_horarioFunci" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintStart_toEndOf="@+id/idAs"
+        app:layout_constraintTop_toBottomOf="@+id/txt_horarioFunci" />
+
+    <TextView
+        android:id="@+id/idAs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:text="às"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/txt_horarioFunci" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="36dp"
+        android:text="FALTA A LOCALIZACAO"
+        app:layout_constraintStart_toEndOf="@+id/txt_horarioFunci"
+        app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
