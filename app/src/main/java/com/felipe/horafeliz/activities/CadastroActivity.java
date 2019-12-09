@@ -1,46 +1,29 @@
 package com.felipe.horafeliz.activities;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
-
-
 import com.felipe.horafeliz.R;
 import com.felipe.horafeliz.model.Bar;
 import com.felipe.horafeliz.model.BarDao;
-
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -134,42 +117,42 @@ public class CadastroActivity extends AppCompatActivity {
         if (ter.isChecked()){
             bar.setTerca(true);
         }else {
-            bar.setSegunda(false);
+            bar.setTerca(false);
         }
 
         //Quarta
         if (qua.isChecked()){
             bar.setQuarta(true);
         }else {
-            bar.setSegunda(false);
+            bar.setQuarta(false);
         }
 
         //Quinta
         if (qui.isChecked()){
             bar.setQuinta(true);
         }else {
-            bar.setSegunda(false);
+            bar.setQuinta(false);
         }
 
         //Sexta
         if (sex.isChecked()){
             bar.setSexta(true);
         }else {
-            bar.setSegunda(false);
+            bar.setSexta(false);
         }
 
         //Sabado
         if (sab.isChecked()){
             bar.setSabado(true);
         }else {
-            bar.setSegunda(false);
+            bar.setSabado(false);
         }
 
         //Domingo
         if (dom.isChecked()){
             bar.setDomingo(true);
         }else {
-            bar.setSegunda(false);
+            bar.setDomingo(false);
         }
 
 

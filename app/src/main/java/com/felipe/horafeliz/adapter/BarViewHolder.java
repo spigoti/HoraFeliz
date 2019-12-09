@@ -1,22 +1,15 @@
 package com.felipe.horafeliz.adapter;
 
-import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.felipe.horafeliz.R;
 import com.felipe.horafeliz.activities.ListaActivity;
 import com.felipe.horafeliz.model.Bar;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class BarViewHolder extends RecyclerView.ViewHolder {

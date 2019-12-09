@@ -4,13 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
-import android.os.BadParcelableException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import com.felipe.horafeliz.R;
 import com.felipe.horafeliz.adapter.BarAdapter;
 import com.felipe.horafeliz.model.BarDao;

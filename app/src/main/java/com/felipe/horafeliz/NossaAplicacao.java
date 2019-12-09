@@ -15,7 +15,7 @@ public class NossaAplicacao extends Application {
         /**
          * Deleta os dados do Realm
          */
-        //Realm.deleteRealm(Realm.getDefaultConfiguration());
+        Realm.deleteRealm(Realm.getDefaultConfiguration());
 
         /**
          * Migra o Realm para uma nova versão
