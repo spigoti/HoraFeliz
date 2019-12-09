@@ -82,6 +82,17 @@
         app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
 
     <TextView
+        android:id="@+id/txt_coordenadas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="12dp"
+        android:hint="Data do Abastecimento"
+        android:text="Altidude/Longitude"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
+
+    <TextView
         android:id="@+id/txt_desconto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -238,14 +249,26 @@
         app:layout_constraintStart_toEndOf="@+id/horario_inicio"
         app:layout_constraintTop_toBottomOf="@+id/txt_horarioFunci" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="36dp"
-        android:text="FALTA A LOCALIZACAO"
-        app:layout_constraintStart_toEndOf="@+id/txt_horarioFunci"
-        app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/horario_fim"
+        app:layout_constraintTop_toBottomOf="@+id/txt_coordenadas" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/txt_coordenadas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

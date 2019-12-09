@@ -39,6 +39,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -76,16 +78,17 @@ public class CadastroActivity extends AppCompatActivity {
         sab = findViewById(R.id.checkBoxSab);
         dom = findViewById(R.id.checkBoxDomingo);
 
+
         String[] opcoesDescontos = getResources().getStringArray(R.array.opcoes_desconto);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcoesDescontos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         descontos.setAdapter(adapter);
 
-        //Recebe o id do Relatório
+        //Recebe o id do Bar
         idBar = getIntent().getStringExtra("idBar");
 
-        //Se não existir um relatório, abre a tela para cadastrar um novo e deixa o botão excluir invisível
+        //Se não existir um Bar, abre a tela para cadastrar um novo e deixa o botão excluir invisível
         if(idBar == null){
             bar = new Bar();
             Button btnExcluir = findViewById(R.id.btnExcluir);
@@ -93,7 +96,15 @@ public class CadastroActivity extends AppCompatActivity {
         }else{
             bar = BarDao.obterInstancia().obterBarId(idBar);
             cnpj.setText(String.valueOf(bar.getCpnj()));
+            seg.setChecked(bar.isSegunda());
+            ter.setChecked(bar.isTerca());
+            qua.setChecked(bar.isQuarta());
+            qui.setChecked(bar.isQuinta());
+            sex.setChecked(bar.isSexta());
+            sab.setChecked(bar.isSabado());
+            dom.setChecked(bar.isDomingo());
             nome.setText(String.valueOf(bar.getNome()));
+
 
 
             for(int i = 0; i < descontos.getAdapter().getCount(); i++){
@@ -114,8 +125,19 @@ public class CadastroActivity extends AppCompatActivity {
         bar.setDesconto(descontos.getSelectedItem().toString());
 
         if (seg.isChecked()){
-            Toast.makeText(this, "Segunda foi checado", Toast.LENGTH_LONG).show();
-
+            bar.setSegunda(true);
+        }if (ter.isChecked()){
+            bar.setTerca(true);
+        }if (qua.isChecked()){
+            bar.setQuarta(true);
+        }if (qui.isChecked()){
+            bar.setQuinta(true);
+        }if (sex.isChecked()){
+            bar.setSexta(true);
+        }if (sab.isChecked()){
+            bar.setSabado(true);
+        }if (dom.isChecked()){
+            bar.setDomingo(true);
         }
 
         if(idBar == null) {
