@@ -26,13 +26,13 @@ public class BarAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        Bar bar= BarDao.obterInstancia().obterBar().get(position);
+        Bar bar= BarDao.obterInstancia().listarBares().get(position);
         BarViewHolder gaveta = (BarViewHolder) holder;
         gaveta.atualizaGavetaComOBarQueChegou(bar);
     }
 
     @Override
     public int getItemCount() {
-        return BarDao.obterInstancia().obterBar().size();
+        return BarDao.obterInstancia().listarBares().size();
     }
 }

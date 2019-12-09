@@ -9,8 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-import com.felipe.relatorioabastecimento.Model.RelatorioDAO;
-import com.felipe.relatorioabastecimento.Model.RelatorioModel;
+import com.felipe.horafeliz.R;
+import com.felipe.horafeliz.model.Bar;
+import com.felipe.horafeliz.model.BarDao;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Realm.init(this);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.btnHistorico);
+        Button button = findViewById(R.id.btn_entrar);
 
         //Evento para ir para a tela da Lista
         button.setOnClickListener(new View.OnClickListener() {
@@ -40,29 +41,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        TextView autonomia = findViewById(R.id.txtResultadoAutonomia);
-        autonomia.setText(getAutonomia());
+       // TextView autonomia = findViewById(R.id.txtResultadoAutonomia);
+        //autonomia.setText(getAutonomia());
     }
 
 
-    private String getAutonomia() {
-        ArrayList<RelatorioModel> relatorios = RelatorioDAO.obterInstancia().obterLista();
+    /**private String getAutonomia() {
+        ArrayList<Bar> relatorios = BarDao.obterInstancia().listarBares();
 
 
         if (relatorios.size() <= 1) return "0.0";
 
-        Double quilometragem = relatorios.get(0).getKmAtual() - relatorios.get(relatorios.size() - 1).getKmAtual();
-        Double litros = 0.0;
+        //Double quilometragem = relatorios.get(0).getKmAtual() - relatorios.get(relatorios.size() - 1).getKmAtual();
+        //Double litros = 0.0;
 
 
         for (int i = 0; i < relatorios.size() - 1; i++) {
-            litros =+ relatorios.get(i).getLitrosAbastecidos();
+        //    litros =+ relatorios.get(i).getLitrosAbastecidos();
         }
 
-        String strDouble = String.format("%.2f",quilometragem/litros);
+        //String strDouble = String.format("%.2f",quilometragem/litros);
 
-        return strDouble;
-    }
+        //return strDouble;
+    }*/
 
 
 }

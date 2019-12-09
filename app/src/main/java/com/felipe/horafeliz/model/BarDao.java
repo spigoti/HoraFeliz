@@ -8,7 +8,7 @@ public class BarDao {
     private ArrayList<Bar> bancoDeDados;
     private static BarDao INSTANCIA;
 
-    public ArrayList<Bar> obterBar(){
+    public ArrayList<Bar> listarBares(){
         Realm realm = Realm.getDefaultInstance();
         RealmResults lista = realm.where(Bar.class).findAll();
         bancoDeDados.clear();

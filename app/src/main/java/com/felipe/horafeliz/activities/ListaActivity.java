@@ -6,16 +6,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.BadParcelableException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.felipe.relatorioabastecimento.Adapter.RelatorioAdapter;
-import com.felipe.relatorioabastecimento.Model.RelatorioDAO;
+import com.felipe.horafeliz.R;
+import com.felipe.horafeliz.adapter.BarAdapter;
+import com.felipe.horafeliz.model.BarDao;
+
 
 public class ListaActivity extends AppCompatActivity {
 
-    private RelatorioAdapter adaptador;
+    private BarAdapter adaptador;
     private RecyclerView rvRelatorios;
 
 
@@ -24,9 +27,9 @@ public class ListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
-        rvRelatorios = findViewById(R.id.rvRelatorios);
+        rvRelatorios = findViewById(R.id.rv_locais);
 
-        adaptador = new RelatorioAdapter();
+        adaptador = new BarAdapter();
         rvRelatorios.setLayoutManager(new LinearLayoutManager(this));
         rvRelatorios.setAdapter(adaptador);
     }
@@ -49,7 +52,7 @@ public class ListaActivity extends AppCompatActivity {
                 rvRelatorios.smoothScrollToPosition(posicao);
             }else if(resultCode == 201){
                 Toast.makeText(this,"Registro inserido!", Toast.LENGTH_LONG).show();
-                int posicao = RelatorioDAO.obterInstancia().obterLista().size()-1;
+                int posicao = BarDao.obterInstancia().listarBares().size()-1;
                 adaptador.notifyItemInserted(posicao);
                 rvRelatorios.smoothScrollToPosition(posicao);
             }else if(resultCode == 202){

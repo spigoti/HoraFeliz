@@ -8,7 +8,8 @@ public class Bar extends RealmObject {
     @PrimaryKey
     private String id;
     private String nome;
-    private int desconto;
+    private String cpnj;
+    private String desconto;
     private String logo;
     private int horarioFuncionamento;
 
@@ -32,11 +33,11 @@ public class Bar extends RealmObject {
         this.nome = nome;
     }
 
-    public int getDesconto() {
+    public String getDesconto() {
         return desconto;
     }
 
-    public void setDesconto(int desconto) {
+    public void setDesconto(String desconto) {
         this.desconto = desconto;
     }
 
@@ -54,5 +55,13 @@ public class Bar extends RealmObject {
 
     public void setHorarioFuncionamento(int horarioFuncionamento) {
         this.horarioFuncionamento = horarioFuncionamento;
+    }
+
+    public String getCpnj() {
+        return cpnj;
+    }
+
+    public void setCpnj(String cpnj) {
+        this.cpnj = cpnj;
     }
 }

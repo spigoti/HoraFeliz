@@ -71,11 +71,12 @@
         android:id="@+id/txt_horariofunc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
         android:text="00:00 - 00:00"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ter"
-        tools:layout_editor_absoluteX="274dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_ter" />
 
     <ImageView
         android:id="@+id/foto_local"
@@ -100,19 +101,23 @@
         android:id="@+id/txt_nomelocal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
         android:text="Bar dos Amigos"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="2dp" />
+        app:layout_constraintStart_toEndOf="@+id/foto_local"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_desconto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="50% OFF"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="56dp" />
+        app:layout_constraintStart_toEndOf="@+id/foto_local"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nomelocal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
