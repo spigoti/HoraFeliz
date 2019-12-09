@@ -11,72 +11,72 @@
         android:id="@+id/txt_ter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="T"
-        app:layout_constraintStart_toEndOf="@+id/txt_seg"
+        app:layout_constraintEnd_toStartOf="@+id/txt_qui"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_qui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="Q"
-        app:layout_constraintStart_toEndOf="@+id/txt_ter"
+        app:layout_constraintEnd_toStartOf="@+id/txt_quar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="S"
-        app:layout_constraintStart_toEndOf="@+id/txt_quar"
+        app:layout_constraintEnd_toStartOf="@+id/txt_sab"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_sab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="S"
-        app:layout_constraintStart_toEndOf="@+id/txt_sex"
+        app:layout_constraintEnd_toStartOf="@+id/txt_dom"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_dom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
         android:text="D"
-        app:layout_constraintStart_toEndOf="@+id/txt_sab"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_quar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
         android:text="Q"
-        app:layout_constraintStart_toEndOf="@+id/txt_qui"
+        app:layout_constraintEnd_toStartOf="@+id/txt_sex"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_horariofunc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="4dp"
-        android:text="00:00 - 00:00"
+        android:layout_width="102dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="10dp"
+        android:text="18:00 - 23:00"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_ter" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_desconto" />
 
     <ImageView
         android:id="@+id/foto_local"
@@ -84,6 +84,8 @@
         android:layout_height="81dp"
         android:maxWidth="@dimen/underline_top_spacing"
         android:maxHeight="@dimen/underline_top_spacing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_nomelocal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -91,18 +93,18 @@
         android:id="@+id/txt_seg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:text="S"
-        app:layout_constraintStart_toEndOf="@+id/foto_local"
+        app:layout_constraintEnd_toStartOf="@+id/txt_ter"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_nomelocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="129dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
         android:text="Bar dos Amigos"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -111,13 +113,13 @@
 
     <TextView
         android:id="@+id/txt_desconto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="52dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="50% OFF"
-        app:layout_constraintStart_toEndOf="@+id/foto_local"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nomelocal" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/foto_local" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

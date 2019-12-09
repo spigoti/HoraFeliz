@@ -83,13 +83,13 @@
 
     <TextView
         android:id="@+id/txt_coordenadas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
+        android:layout_width="124dp"
+        android:layout_height="19dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
         android:hint="Data do Abastecimento"
         android:text="Altidude/Longitude"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputCnpj" />
 
     <TextView
@@ -249,26 +249,38 @@
         app:layout_constraintStart_toEndOf="@+id/horario_inicio"
         app:layout_constraintTop_toBottomOf="@+id/txt_horarioFunci" />
 
+    <TextView
+        android:id="@+id/idAs2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="--"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintStart_toEndOf="@+id/editText"
+        tools:layout_editor_absoluteY="202dp" />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
         android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/horario_fim"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/txt_coordenadas" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="6dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_coordenadas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

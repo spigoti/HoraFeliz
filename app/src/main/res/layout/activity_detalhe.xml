@@ -8,7 +8,7 @@
     tools:context=".activities.DetalheActivity">
 
     <Button
-        android:id="@+id/btn_mapa2"
+        android:id="@+id/btn_editar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -21,27 +21,18 @@
         android:id="@+id/logo_detalhe"
         android:layout_width="291dp"
         android:layout_height="288dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/txt_detalheNome"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_chopp_foreground" />
 
     <Button
         android:id="@+id/btn_mapa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="50dp"
         android:text="EXIBIR NO MAPA"
-        app:layout_constraintBottom_toTopOf="@+id/btn_voltar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_voltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -49,42 +40,42 @@
     <Button
         android:id="@+id/btn_mudarFoto"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="43dp"
+        android:layout_width="126dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="24dp"
         android:text="Trocar foto"
         android:textColor="@color/design_default_color_primary"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_detalhe" />
 
     <TextView
         android:id="@+id/txt_detalheNome"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="21dp"
-        android:text="Nome do bar"
+        android:layout_height="19dp"
+        android:layout_marginBottom="12dp"
+        android:text="Bar do Faustao"
         app:layout_constraintBottom_toTopOf="@+id/txt_detalhePratoChefe"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_detalhePratoChefe"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="46dp"
-        android:text="TextView"
+        android:layout_height="19dp"
+        android:layout_marginBottom="12dp"
+        android:text="Pão com bolinho"
         app:layout_constraintBottom_toTopOf="@+id/txt_detalheCervejaria"
-        app:layout_constraintEnd_toStartOf="@+id/btn_mudarFoto" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_detalheCervejaria"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="120dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/btn_mapa"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="19dp"
+        android:layout_marginBottom="30dp"
+        android:text="Itajahy"
+        app:layout_constraintBottom_toTopOf="@+id/btn_editar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

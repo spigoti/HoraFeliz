@@ -123,30 +123,64 @@ public class CadastroActivity extends AppCompatActivity {
         bar.setCpnj(cnpj.getText().toString());
         bar.setDesconto(descontos.getSelectedItem().toString());
 
+        //Segunda
         if (seg.isChecked()){
             bar.setSegunda(true);
-        }if (ter.isChecked()){
-            bar.setTerca(true);
-        }if (qua.isChecked()){
-            bar.setQuarta(true);
-        }if (qui.isChecked()){
-            bar.setQuinta(true);
-        }if (sex.isChecked()){
-            bar.setSexta(true);
-        }if (sab.isChecked()){
-            bar.setSabado(true);
-        }if (dom.isChecked()){
-            bar.setDomingo(true);
+        }else {
+            bar.setSegunda(false);
         }
+
+        //Terça
+        if (ter.isChecked()){
+            bar.setTerca(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
+        //Quarta
+        if (qua.isChecked()){
+            bar.setQuarta(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
+        //Quinta
+        if (qui.isChecked()){
+            bar.setQuinta(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
+        //Sexta
+        if (sex.isChecked()){
+            bar.setSexta(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
+        //Sabado
+        if (sab.isChecked()){
+            bar.setSabado(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
+        //Domingo
+        if (dom.isChecked()){
+            bar.setDomingo(true);
+        }else {
+            bar.setSegunda(false);
+        }
+
 
         if(idBar == null) {
             BarDao.obterInstancia().adicionarBarNaLista(bar);
             setResult(201);
         }else{
             int posicaoDoObjeto = BarDao.obterInstancia().atualizaBarNaLista(bar);
-            Intent intentCadastroActivity = new Intent();
+            Intent intentCadastroActivity = new Intent(CadastroActivity.this, ListaActivity.class);
             intentCadastroActivity.putExtra("posicaoDoObjetoEditado", posicaoDoObjeto);
-            setResult(200, intentCadastroActivity);
+            startActivity(intentCadastroActivity);
         }
         finish();
 
@@ -229,51 +263,6 @@ public class CadastroActivity extends AppCompatActivity {
         }
     }
 
-
-    /**public void tentarObterCoordenada(View v) {
-        if (this.checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            return;
-        }
-        obterCoordenada();
-    }
-
-    private void obterCoordenada() {
-        LocationManager gerenciadorLocalizacao = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-
-        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
-        gerenciadorLocalizacao.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                0,
-                0,
-                new LocationListener() {
-                    @Override
-                    public void onLocationChanged(Location location) {
-                        objetoCompromisso.setLatitude(location.getLatitude());
-                        objetoCompromisso.setLongitude(location.getLongitude());
-                    }
-
-                    @Override
-                    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-                    }
-
-                    @Override
-                    public void onProviderEnabled(String provider) {
-
-                    }
-
-                    @Override
-                    public void onProviderDisabled(String provider) {
-
-                    }
-                });
-        Toast.makeText(this, "ACIONADO!!!", Toast.LENGTH_SHORT).show();
-
-    }
-
-     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

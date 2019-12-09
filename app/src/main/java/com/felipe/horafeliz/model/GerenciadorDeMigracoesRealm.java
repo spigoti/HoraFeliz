@@ -18,6 +18,9 @@ public class GerenciadorDeMigracoesRealm implements RealmMigration {
 
     private void passoDeMigracao(DynamicRealm realm, long versaoVelha, long versaoNova){
 
+        /**
+         * Adiciona uma nova versão do Realm, contendo latitude e longitude
+         */
         if(versaoVelha == 1 && versaoNova == 2){
             RealmSchema schema = realm.getSchema();
             RealmObjectSchema compromissoSchema = schema.get("Bar");

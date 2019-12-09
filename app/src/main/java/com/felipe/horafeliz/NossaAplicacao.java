@@ -11,8 +11,15 @@ public class NossaAplicacao extends Application {
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
+
+        /**
+         * Deleta os dados do Realm
+         */
         //Realm.deleteRealm(Realm.getDefaultConfiguration());
 
+        /**
+         * Migra o Realm para uma nova versão
+         */
         RealmConfiguration configuracaoRealm = new RealmConfiguration.Builder()
                 .schemaVersion(2)
                 .migration( new GerenciadorDeMigracoesRealm() )
