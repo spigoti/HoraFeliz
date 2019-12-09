@@ -35,8 +35,8 @@ public class ListaActivity extends AppCompatActivity {
     }
 
 
-    public void editarBar(View v, String idBar){
-        Intent intent = new Intent(this, CadastroActivity.class);
+    public void detalharBar(View v, String idBar){
+        Intent intent = new Intent(this, DetalheActivity.class);
         intent.putExtra("idBar", idBar);
         startActivityForResult(intent, 1);
     }

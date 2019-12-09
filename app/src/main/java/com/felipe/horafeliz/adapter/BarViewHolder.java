@@ -46,7 +46,7 @@ public class BarViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 //cast do contexto para activity atual e chamada do método
-                ((ListaActivity) v.getContext()).editarBar(v, idBar);
+                ((ListaActivity) v.getContext()).detalharBar(v, idBar);
             }
         });
 

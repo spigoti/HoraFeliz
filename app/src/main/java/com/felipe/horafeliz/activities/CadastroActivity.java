@@ -106,7 +106,6 @@ public class CadastroActivity extends AppCompatActivity {
             nome.setText(String.valueOf(bar.getNome()));
 
 
-
             for(int i = 0; i < descontos.getAdapter().getCount(); i++){
                 if (descontos.getAdapter().getItem(i).toString().equalsIgnoreCase( bar.getDesconto())){
                     descontos.setSelection(i+1);
