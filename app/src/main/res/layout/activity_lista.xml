@@ -24,7 +24,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:clickable="true"
-        android:onClick="adicionarAbastecimento"
+        android:onClick="adicionarBar"
         app:backgroundTint="#3B495A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

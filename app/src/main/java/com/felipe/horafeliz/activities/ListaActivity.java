@@ -19,7 +19,7 @@ import com.felipe.horafeliz.model.BarDao;
 public class ListaActivity extends AppCompatActivity {
 
     private BarAdapter adaptador;
-    private RecyclerView rvRelatorios;
+    private RecyclerView rvBares;
 
 
     @Override
@@ -27,17 +27,17 @@ public class ListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
-        rvRelatorios = findViewById(R.id.rv_locais);
+        rvBares = findViewById(R.id.rv_locais);
 
         adaptador = new BarAdapter();
-        rvRelatorios.setLayoutManager(new LinearLayoutManager(this));
-        rvRelatorios.setAdapter(adaptador);
+        rvBares.setLayoutManager(new LinearLayoutManager(this));
+        rvBares.setAdapter(adaptador);
     }
 
 
-    public void editarRelatorio(View v, String idRelatorio){
+    public void editarBar(View v, String idBar){
         Intent intent = new Intent(this, CadastroActivity.class);
-        intent.putExtra("idRelatorio", idRelatorio);
+        intent.putExtra("idBar", idBar);
         startActivityForResult(intent, 1);
     }
 
@@ -49,21 +49,21 @@ public class ListaActivity extends AppCompatActivity {
             if(resultCode == 200){
                 int posicao = data.getIntExtra("posicaoDoObjetoEditado", -1);
                 adaptador.notifyItemChanged(posicao);
-                rvRelatorios.smoothScrollToPosition(posicao);
+                rvBares.smoothScrollToPosition(posicao);
             }else if(resultCode == 201){
-                Toast.makeText(this,"Registro inserido!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Bar inserido!", Toast.LENGTH_LONG).show();
                 int posicao = BarDao.obterInstancia().listarBares().size()-1;
                 adaptador.notifyItemInserted(posicao);
-                rvRelatorios.smoothScrollToPosition(posicao);
+                rvBares.smoothScrollToPosition(posicao);
             }else if(resultCode == 202){
-                Toast.makeText(this, "Registro excluído!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Bar excluído!", Toast.LENGTH_LONG).show();
                 int posicao = data.getIntExtra("posicaoDoObjetoExcluido", -1);
                 adaptador.notifyItemRemoved(posicao);
 
             }
         }
     }
-    public void adicionarAbastecimento(View v){
+    public void adicionarBar(View v){
         Intent intent = new Intent(this, CadastroActivity.class);
         startActivityForResult(intent, 1);
     }

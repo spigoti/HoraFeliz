@@ -16,7 +16,7 @@ public class BarDao {
         return bancoDeDados;
     }
 
-    public void adicionarBar(Bar bar){
+    public void adicionarBarNaLista(Bar bar){
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         realm.copyToRealm(bar);

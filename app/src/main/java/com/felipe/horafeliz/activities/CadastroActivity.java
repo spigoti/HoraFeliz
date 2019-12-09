@@ -109,12 +109,17 @@ public class CadastroActivity extends AppCompatActivity {
 
     public void salvar(View v){
 
-        //bar.setKmAtual(Double.parseDouble(editKm.getText().toString()));
-        //bar.setLitrosAbastecidos(Double.parseDouble(editLitros.getText().toString()));
-        //bar.setPosto(postos.getSelectedItem().toString());
+        bar.setNome(nome.getText().toString());
+        bar.setCpnj(cnpj.getText().toString());
+        bar.setDesconto(descontos.getSelectedItem().toString());
+
+        if (seg.isChecked()){
+            Toast.makeText(this, "Segunda foi checado", Toast.LENGTH_LONG).show();
+
+        }
 
         if(idBar == null) {
-            BarDao.obterInstancia().adicionarBar(bar);
+            BarDao.obterInstancia().adicionarBarNaLista(bar);
             setResult(201);
         }else{
             int posicaoDoObjeto = BarDao.obterInstancia().atualizaBarNaLista(bar);
@@ -247,7 +252,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
-
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -261,5 +266,5 @@ public class CadastroActivity extends AppCompatActivity {
         }
 
     }
-    */
+
 }
