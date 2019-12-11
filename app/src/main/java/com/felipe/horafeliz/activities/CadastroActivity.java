@@ -64,6 +64,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         String[] opcoesDescontos = getResources().getStringArray(R.array.opcoes_desconto);
 
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcoesDescontos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         descontos.setAdapter(adapter);
